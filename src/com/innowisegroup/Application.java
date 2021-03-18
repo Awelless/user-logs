@@ -4,26 +4,26 @@ import com.innowisegroup.data.ConsoleDataReader;
 import com.innowisegroup.data.DataReader;
 import com.innowisegroup.initializer.InitializationException;
 import com.innowisegroup.initializer.Initializer;
-import com.innowisegroup.uistrategy.UiStrategy;
-import com.innowisegroup.uistrategy.UiStrategyException;
-import com.innowisegroup.uistrategy.UiStrategyFactory;
+import com.innowisegroup.strategy.Strategy;
+import com.innowisegroup.strategy.StrategyException;
+import com.innowisegroup.strategy.StrategyFactory;
 
 public class Application {
 
-    private static final String CHOOSE_ACTION_MESSAGE =
-            "1 - Create new user\n" +
-            "2 - Update existing user\n" +
-            "3 - Delete user\n" +
-            "4 - Get user info\n" +
-            "0 - Exit\n" +
-            "Enter action type:";
+    private static final String CHOOSE_ACTION_MESSAGE = """
+            1 - Create new user
+            2 - Update existing user
+            3 - Delete user
+            4 - Get user info
+            0 - Exit
+            Enter action type:""";
 
     private static final String EXIT_CODE = "0";
 
     private static void run() {
 
         DataReader dataReader = ConsoleDataReader.getInstance();
-        UiStrategyFactory uiStrategyFactory = new UiStrategyFactory();
+        StrategyFactory strategyFactory = new StrategyFactory();
 
         while (true) {
             System.out.println(CHOOSE_ACTION_MESSAGE);
@@ -34,15 +34,15 @@ public class Application {
                 break;
             }
 
-            UiStrategy uiStrategy;
+            Strategy strategy;
             try {
-                uiStrategy = uiStrategyFactory.create(type);
-            } catch (UiStrategyException e) {
+                strategy = strategyFactory.create(type);
+            } catch (StrategyException e) {
                 System.out.println("Invalid action type. Try again");
                 continue;
             }
 
-            uiStrategy.execute();
+            strategy.execute();
 
             System.out.println("-------------------------------");
         }

@@ -1,4 +1,4 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
 import java.util.Arrays;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
 import com.innowisegroup.data.ConsoleDataReader;
 import com.innowisegroup.data.DataReader;
@@ -10,7 +10,7 @@ import com.innowisegroup.validator.*;
 
 import java.util.List;
 
-public abstract class AbstractSetFieldsStrategy implements UiStrategy {
+public abstract class AbstractSetFieldsStrategy implements Strategy {
 
     protected abstract String getNameMessage();
     protected abstract String getSurnameMessage();

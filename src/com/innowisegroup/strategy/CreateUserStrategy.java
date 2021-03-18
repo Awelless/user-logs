@@ -1,4 +1,4 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
 import com.innowisegroup.repository.UserRepository;
 

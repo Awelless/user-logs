@@ -1,4 +1,4 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
 import com.innowisegroup.data.ConsoleDataReader;
 import com.innowisegroup.data.DataReader;
@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class FindUserStrategy implements UiStrategy {
+public class FindUserStrategy implements Strategy {
 
     private static final String CHOOSE_OPTION_MESSAGE = """
                     1 - Get by id

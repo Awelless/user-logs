@@ -1,4 +1,4 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
 import com.innowisegroup.entity.User;
 import com.innowisegroup.repository.UserRepository;
@@ -27,7 +27,7 @@ public class UpdateUserStrategy extends AbstractSetFieldsStrategy {
 
         try {
             findUser();
-        } catch (UiStrategyException e) {
+        } catch (StrategyException e) {
             System.out.println(e.getMessage());
             return;
         }
@@ -42,7 +42,7 @@ public class UpdateUserStrategy extends AbstractSetFieldsStrategy {
         System.out.println("User is updated");
     }
 
-    private void findUser() throws UiStrategyException {
+    private void findUser() throws StrategyException {
 
         UserRepository userRepository = UserRepository.getInstance();
 
@@ -61,7 +61,7 @@ public class UpdateUserStrategy extends AbstractSetFieldsStrategy {
             Optional<User> optionalUser = userRepository.findById(id);
 
             if (optionalUser.isEmpty()) {
-                throw new UiStrategyException("There is no user with given id");
+                throw new StrategyException("There is no user with given id");
             }
 
             user = optionalUser.get();

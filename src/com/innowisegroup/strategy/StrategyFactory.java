@@ -1,15 +1,15 @@
-package com.innowisegroup.uistrategy;
+package com.innowisegroup.strategy;
 
-public class UiStrategyFactory {
+public class StrategyFactory {
 
-    public UiStrategy create(String type) throws UiStrategyException {
+    public Strategy create(String type) throws StrategyException {
 
         return switch (type) {
             case "1" -> new CreateUserStrategy();
             case "2" -> new UpdateUserStrategy();
             case "3" -> new DeleteUserStrategy();
             case "4" -> new FindUserStrategy();
-            default -> throw new UiStrategyException("Invalid type");
+            default -> throw new StrategyException("Invalid type");
         };
     }
 }
