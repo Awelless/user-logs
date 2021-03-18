@@ -12,13 +12,13 @@ import java.util.Optional;
 
 public class FindUserStrategy implements UiStrategy {
 
-    private static final String CHOOSE_OPTION_MESSAGE =
-            "1 - Get by id\n" +
-            "2 - Get by name\n" +
-            "3 - Get by surname\n" +
-            "4 - Get by name and surname\n" +
-            "5 - Get all existing users\n" +
-            "Choose search criteria type:";
+    private static final String CHOOSE_OPTION_MESSAGE = """
+                    1 - Get by id
+                    2 - Get by name
+                    3 - Get by surname
+                    4 - Get by name and surname
+                    5 - Get all existing users
+                    Choose search criteria type:""";
     private static final String ID_MESSAGE = "Enter user's id";
     private static final String NAME_MESSAGE = "Enter user's name";
     private static final String SURNAME_MESSAGE = "Enter user's surname";

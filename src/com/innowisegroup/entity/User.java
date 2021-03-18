@@ -101,12 +101,13 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User: " +
-                "id = " + id + "   " +
-                "name = '" + name + "'   " +
-                "Surname = '" + surname + "'   " +
-                "email = '" + email + "'   " +
-                "roles = " + roles + "   " +
-                "phones = " + phones;
+        return String.format("User: " +
+                "id = %-3s " +
+                "name = %-10s " +
+                "surname = %-10s" +
+                "email = %-16s" +
+                "roles = %-32s" +
+                "phones = %s",
+                id, name, surname, email, roles, phones);
     }
 }

@@ -2,15 +2,12 @@ package com.innowisegroup.repository;
 
 import com.innowisegroup.entity.User;
 import com.innowisegroup.initializer.InitializationException;
-import com.innowisegroup.observer.ObserverException;
 import com.innowisegroup.observer.Observable;
 import com.innowisegroup.observer.Observer;
+import com.innowisegroup.observer.ObserverException;
 import com.innowisegroup.util.IdGenerator;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class UserRepository implements Repository<User, Integer>, Observable {
@@ -18,7 +15,7 @@ public class UserRepository implements Repository<User, Integer>, Observable {
     private static UserRepository INSTANCE;
 
     private final IdGenerator generator;
-    private final List<User> users = new ArrayList<>();
+    private final Set<User> users = new HashSet<>();
     private final List<Observer> observers = new ArrayList<>();
 
     private UserRepository(IdGenerator generator) {

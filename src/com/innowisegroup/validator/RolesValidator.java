@@ -53,9 +53,9 @@ public class RolesValidator implements Validator {
             Matcher matcher = ROLE_PATTERN.matcher(role);
             if (!matcher.matches()) {
                 invalidRoles.add(role);
+            } else {
+                userRoles.add(UserRole.valueOf(role));
             }
-
-            userRoles.add(UserRole.valueOf(role));
         }
 
         if (invalidRoles.size() > 0) {
@@ -63,7 +63,7 @@ public class RolesValidator implements Validator {
             StringBuilder builder = new StringBuilder();
             invalidRoles.forEach(role -> builder.append(role).append(' '));
 
-            throw new ValidationException("Invalid roles numbers: " + builder.toString());
+            throw new ValidationException("Invalid roles: " + builder.toString());
         }
 
         return userRoles;

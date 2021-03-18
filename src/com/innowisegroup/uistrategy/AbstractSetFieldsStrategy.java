@@ -12,20 +12,6 @@ import java.util.List;
 
 public abstract class AbstractSetFieldsStrategy implements UiStrategy {
 
-    protected static final String NAME_MESSAGE = "Enter user's name:";
-    protected static final String SURNAME_MESSAGE = "Enter user's surname:";
-    protected static final String EMAIL_MESSAGE = "Enter user's email:";
-    protected static final String ROLES_MESSAGE =
-            "Available roles:\n" +
-                    "USER - rank 1\n" +
-                    "CUSTOMER - rank 1\n" +
-                    "ADMIN - rank 2\n" +
-                    "PROVIDER - rank 2\n" +
-                    "SUPER_ADMIN - rank 3\n" +
-                    "Enter user's roles (one by one, separated by space character):";
-    protected static final String PHONE_NUMBERS_MESSAGE =
-            "Enter phone numbers (one by one, separated by space character):";
-
     protected abstract String getNameMessage();
     protected abstract String getSurnameMessage();
     protected abstract String getEmailMessage();

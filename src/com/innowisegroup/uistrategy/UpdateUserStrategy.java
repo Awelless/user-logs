@@ -11,14 +11,14 @@ public class UpdateUserStrategy extends AbstractSetFieldsStrategy {
     private static final String NAME_MESSAGE = "Enter new user's name:";
     private static final String SURNAME_MESSAGE = "Enter new user's surname:";
     private static final String EMAIL_MESSAGE = "Enter new user's email:";
-    private static final String ROLES_MESSAGE =
-            "Available roles:" +
-            "USER - rank 1" +
-            "CUSTOMER - rank 1" +
-            "ADMIN - rank 2" +
-            "PROVIDER - rank 2" +
-            "SUPER_ADMIN - rank 3" +
-            "Enter new user's roles (one by one, separated by space character):";
+    private static final String ROLES_MESSAGE = """
+            Available roles:
+            USER - rank 1
+            CUSTOMER - rank 1
+            ADMIN - rank 2
+            PROVIDER - rank 2
+            SUPER_ADMIN - rank 3
+            Enter new user's roles (one by one, separated by space character):""";
     private static final String PHONE_NUMBERS_MESSAGE =
             "Enter new phone numbers (one by one, separated by space character):";
 
